@@ -27,5 +27,6 @@ class Todo(models.Model):
     _description="Lista de tareas"
     name=fields.Char(string='Nombre')
     state= fields.Char(string='Estado')
+    title= fields.Char(string='Titulo')
 
 

@@ -1,5 +1,17 @@
 <odoo>
   <data>
+    <!-- accion de ventana -->
+    <record model="ir.actions.act_window" id="action_view_todo">
+      <field name="name">Lista de Tareas</field>
+      <field name="res_model">todo_app</field>
+    </record>
+
+    <!-- registro de menu item -->
+    <menuitem
+      id="menu_main_todo"
+      name="Todo app"
+      action="action_view_todo"
+      parent=""/>
     <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="todo_list.list">
