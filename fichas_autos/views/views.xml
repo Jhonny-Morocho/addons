@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="fichas_autos.list">
+      <field name="name">fichas_autos list</field>
+      <field name="model">fichas_autos.fichas_autos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="fichas_autos.action_window">
+      <field name="name">fichas_autos window</field>
+      <field name="res_model">fichas_autos.fichas_autos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="fichas_autos.action_server">
+      <field name="name">fichas_autos server</field>
+      <field name="model_id" ref="model_fichas_autos_fichas_autos"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="fichas_autos" id="fichas_autos.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="fichas_autos.menu_1" parent="fichas_autos.menu_root"/>
+    <menuitem name="Menu 2" id="fichas_autos.menu_2" parent="fichas_autos.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="fichas_autos.menu_1_list" parent="fichas_autos.menu_1"
+              action="fichas_autos.action_window"/>
+    <menuitem name="Server to list" id="fichas_autos" parent="fichas_autos.menu_2"
+              action="fichas_autos.action_server"/>
+-->
+  </data>
+</odoo>
