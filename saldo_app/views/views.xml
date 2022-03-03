@@ -1,0 +1,44 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<odoo>
+
+    <!-- ## ACTICIONES DE VENTANA -->
+    <record id="action_view_movimiento" model="ir.actions.act_window">
+        <field name="name">Movimientos</field>
+        <field name="res_model">sa.movimiento</field>
+    </record>
+
+    <record id="action_view_categoria" model="ir.actions.act_window">
+        <field name="name">Categorias</field>
+        <field name="res_model">sa.categoria</field>
+    </record>
+
+    <record id="action_view_tag" model="ir.actions.act_window">
+        <field name="name">Etiquetas</field>
+        <field name="res_model">sa.tag</field>
+    </record>
+     <!-- ## END ACTICIONES DE VENTANA -->
+
+    
+    
+    <!-- ######  MENUS  ######### -->
+
+    <!-- #menu principal -->
+    <menuitem
+        id="menu_main_saldoapp"
+        name="SALDO APP"
+        action="sado_app.action_view_movimiento"
+        parent=""
+        sequence=""/>
+
+    <!-- ## sub-menus -->
+    <menuitem
+        id="menu_movimiento"
+        name="Movimientos"
+        parent="sado_app.menu_main_saldoapp"
+        action="sado_app.action_view_movimiento"/>
+    <menuitem
+        id="menu_categorias"
+        name="Categorias"
+        parent="sado_app.menu_main_saldoapp"
+        action="sado_app.action_view_movimiento"/>
+</odoo>
