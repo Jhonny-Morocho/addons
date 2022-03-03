@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'data/data.xml',
+        'security/res_groups.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

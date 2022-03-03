@@ -25,8 +25,12 @@ class Todo(models.Model):
     #nombre de la tabla
     _name="todo_app" #nombre de la tabla
     _description="Lista de tareas"
+    ##remplazar un campo por el de dafaul nae
+    _rec_name="description"
+
     name=fields.Char(string='Nombre')
+    description=fields.Char(string='Descripcion')
     state= fields.Char(string='Estado')
-    title= fields.Char(string='Titulo')
+    #title= fields.Char(string='Titulo')
 
 
