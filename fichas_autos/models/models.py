@@ -1,18 +1,21 @@
-# -*- coding: utf-8 -*-
+from odoo import fields,models
 
-# from odoo import models, fields, api
+class Ficha (models.Model):
 
+    _name = 'ft.ficha'
+    _description = 'Tabla de fichas tecnicas'
+    #name=""
+    name = fields.Char(string="Vehiculo",required=True)
+    combustible= fields.Selection(selection=[("gasolina","Gasolina"),("diesel","Diesel")],
+                                string="Tipo de combustible",required=True)
 
-# class fichas_autos(models.Model):
-#     _name = 'fichas_autos.fichas_autos'
-#     _description = 'fichas_autos.fichas_autos'
+    torque_maximo = fields.Char(string="Torque Máximo",required=True)
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+    traccion = fields.Selection(selection=[("delantera","Delantera"),("trasera","Trasera")],
+                                string="Tipo de Ubicacion",required=True)
+                                
+    cilindraje = fields.Float(string="Cilindraje")
+    caja = fields.Selection(selection=[("manual","Manual"),("automatica","Automatica")],
+                            string="Tipo de caja de Cambio",required=True)
+    num_cilindros = fields.Float(string="Numero de cilindros",required=True)
+    vehiculo_image = fields.Binary(string="Foto del vehiculo")
