@@ -7,7 +7,7 @@
     'version': '1.0',
     'depends': ['base'],
     'data': [
-        #"security/res_groups.xml,
-        "views/views.xml"
+        'security/ir_model_access.xml',
+        'views/views.xml'
     ]
 }

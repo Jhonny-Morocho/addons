@@ -5,14 +5,16 @@ class Movimiento (models.Model):
     _name = 'sa.movimiento' #sa_movimiento
     _description = 'Tabla movimiento'
     ##campos
-    name = fields.Char("Nombre")
-    type_move= fields.Selection(selection=[("ingreso","Ingreso"),("gasto","Gasto")])
-    date = fields.Datetime("Fecha")
-    amount = fields.Float("Monto")
-    receipt_image = fields.Binary("Foto del recibo")
+    name = fields.Char(string="Nombre",required=True)
+    type_move= fields.Selection(selection=[("ingreso","Ingreso"),("gasto","Gasto")],
+                                string="Tipo de movimiento",default="ingreso",required=True)
+    date = fields.Datetime(string="Fecha")
+    amount = fields.Float(string="Monto")
+    receipt_image = fields.Binary(string="Foto del recibo")
+    notas = fields.Html(string="Notas")
     ##crera relacion
-    user_id = fields.Many2one('res.user',string='Usuarios')
-    categoria_id = fields.Many2one('sa.category.',string='Categoria')
+    user_id = fields.Many2one('res.users',string='Usuarios')
+    categoria_id = fields.Many2one('sa.category',string='Categoria')
     ##movimiento & tags es mucho a mucho
     #tag_ids = fields.Many2many('sa.tag') # odo hace= sa_movimiento_sa_tag_rel
     #nombre personalizado y los campos
@@ -37,8 +39,6 @@ class ResUsers(models.Model):
 
     movimiento_ids = fields.One2many('sa.movimiento', 'user_id')
     
-
-
 
 ### LA TABLA USUARIO YA EXISTE POR ENDE OCUPAREMOS LA QUE VIENE EN ODOO ##
 
