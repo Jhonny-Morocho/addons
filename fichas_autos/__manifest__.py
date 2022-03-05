@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Ficha tecnica",
+    'name': "FICHAS AUTOS",
 
     'summary': """
         FICHAS DE AUTOS""",
@@ -34,7 +34,7 @@ en el backend.
     # always loaded
     'data': [
         'security/ir_model_access.xml',
-        'views/views.xml',
+        'views/views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

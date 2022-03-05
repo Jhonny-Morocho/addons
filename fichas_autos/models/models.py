@@ -5,7 +5,8 @@ class Ficha (models.Model):
     _name = 'ft.ficha'
     _description = 'Tabla de fichas tecnicas'
     #name=""
-    name = fields.Char(string="Vehiculo",required=True)
+    name = fields.Char(string="Marca Vehiculo",required=True)
+    estado= fields.Boolean(string="Estado",required=True,default=True)
     combustible= fields.Selection(selection=[("gasolina","Gasolina"),("diesel","Diesel")],
                                 string="Tipo de combustible",required=True)
 
@@ -18,4 +19,11 @@ class Ficha (models.Model):
     caja = fields.Selection(selection=[("manual","Manual"),("automatica","Automatica")],
                             string="Tipo de caja de Cambio",required=True)
     num_cilindros = fields.Float(string="Numero de cilindros",required=True)
-    vehiculo_image = fields.Binary(string="Foto del vehiculo")
+    vehiculo_image = fields.Binary(string="Foto del vehiculo",required=True)
+    
+    ##realcionar modelos con la tabla existente usuarios many2One tabla usuario con movimiento
+    user_id = fields.Many2one('res.users',string='Usuario')
+
+class ResUser(models.Model):
+    _inherit = "res.users"
+    ficha_id = fields.One2many('ft.ficha', 'user_id')
