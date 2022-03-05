@@ -52,10 +52,20 @@
                     </group>
                     <group>
                         <group>
-                            <field name="vehiculo_image" required="1" widget="image" />
+                            <field name="estado" required="1" widget="boolean_switch" />
                         </group>
                         <group>
-                            <field name="estado" required="1" widget="boolean_switch" />
+                            <field name="user_id" required="1" string="Proveedor" 
+                            invisible="1"
+                             />
+                        </group>
+                   <!--      <group>
+                            <button name="verUsuario" type="object" string="Ver Usuario"/>
+                        </group> -->
+                    </group>
+                    <group>
+                        <group>
+                            <field name="vehiculo_image" required="1" widget="image" />
                         </group>
                     </group>
                 </sheet>
